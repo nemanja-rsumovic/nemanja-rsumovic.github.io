@@ -154,7 +154,7 @@ nav .fa{
         position: fixed;
         background-color: #5299db;
         height: 100vh;
-        width: 200px;
+        width: 180px;
         top: 0;
         right: -200px;
         text-align: left;
@@ -164,6 +164,8 @@ nav .fa{
 
     .navLinks ul{
         position: relative;
+        background-color: transparent;
+        right: 0;
     }
 
     nav .fa{
