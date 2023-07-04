@@ -8,12 +8,12 @@
 
     <link rel="shortcut icon" type="x-icon" href="slike/favicon.png">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </head>
 <body>
 
     <!-- SNOWFLAKE -->
-    <div class='snowflakes' aria-hidden='true'>
+<!--<div class='snowflakes' aria-hidden='true'>
         <div class='snowflake'>❅</div>
         <div class='snowflake'>❅</div>
         <div class='snowflake'>❅</div>
@@ -25,7 +25,7 @@
         <div class='snowflake'>❅</div>
         <div class='snowflake'>❅</div>
     </div>
-  
+-->
   
     <!-- HOME -->
     <section id="home" class="header">
@@ -36,7 +36,8 @@
                 <ul>
                     <li><a href="#home">HOME</a></li>
                     <li><a href="#studies">STUDIES</a></li>
-                    <li><a href="#schedules">SCHEDULES</a></li>                    
+                    <li><a href="#projects">PROJECTS</a></li> 
+                    <li><a href="#schedules">SCHEDULES</a></li>                   
                     <li><a href="#institutions">INSTITUTIONS</a></li>
                     <li><a href="#contact">CONTACT</a></li>
                 </ul>
@@ -47,11 +48,12 @@
 
         <div class="textBox">
             <h1>Nemanja Ršumović<span class="blink">_</span></h1>
-            <p>Student at Faculty of Mathematics, University of Belgrade <br> & <br>HR Team Member at Student Union of Mathematicians</p>
+            <p>Student at Faculty of Mathematics, University of Belgrade <br> & <br>HR Team Member at Student Union of Mathematicians <br>IT Team Member at Board of European Students of Technology</p>
             <a href="files/cv.pdf" target="_blank" class="button">CV</a>
         </div>
 
     </section>
+
 
     <!-- STUDIES -->
     <section id="studies" class="studies">
@@ -262,6 +264,76 @@
 
     </section>
 
+
+    <!-- PROJECTS -->
+    <section id="projects" class="projects">
+        <h1>Projects</h1>
+        <div class="container">
+            <div id="slide">
+                <div class="item" style="background-image: url(slike/banner3.jpg); border-radius: 15px;">
+                    <div class="content">
+                        <div class="name">6</div>
+                        <div class="des" style="color: red;">in progress</div>
+                        <a href="" target="_blank"><button>See more</button></a>
+                    
+                    </div>
+                </div>
+                <div class="item" style="background-image: url(slike/audio-recorde-project.png); border-radius: 15px;">
+                    <div class="content">
+                        <div class="name blurDiv">Audio-Recorder</div>
+                        <div class="des blurDiv">A project created as part of <br> the Programming Paradigms course <br> written in the Rust programming language.
+                                        <br><br> The Audio-Recorder application is intended for recording sound and is designed to work in the terminal.</div>
+                        <a href="https://github.com/nemanja-rsumovic/2023_Audio-Recorder" target="_blank"><button>See more</button></a>
+                    </div>
+                </div>
+                <div class="item" style="background-image: url(slike/computer-graphics-project.jpg); border-radius: 15px;">
+                    <div class="content">
+                        <div class="name blurDiv">computer-graphics-project</div>
+                        <div class="des blurDiv">Project for the course of Computer Graphics written in C/C++ and OpenGL.</div>
+                        <a href="https://github.com/nemanja-rsumovic/computer-graphics-project" target="_blank"><button>See more</button></a>
+                    </div>
+                </div>
+                <div class="item" style="background-image: url(slike/data-mining-project.png); border-radius: 15px;">
+                    <div class="content">
+                        <div class="name blurDiv" style="color: black;">Brain tumor Dataset</div>
+                        <div class="blurDiv" style="color: red; font-weight: bold;"> in progress...</div>
+                        <div class="des blurDiv" style="color: black;">Project for the Data Mining course
+                                                <br><br>
+                                                The purpose of this project is to demonstrate some of the uses of:
+                                                <br>
+                                                &nbsp&nbsp&nbsp&nbsp&nbsp Classification Algorithms
+                                                <br>
+                                                &nbsp&nbsp&nbsp&nbsp&nbsp Clustering Algorithms
+                                                <br>
+                                                &nbsp&nbsp&nbsp&nbsp&nbsp Associacion Rules in SPSS
+                        </div>
+                        <a href="https://github.com/MATF-istrazivanje-podataka-1/2023_Data_Mining_Brain_tumor_Dataset" target="_blank"><button>See more</button></a>
+                    </div>
+                </div>
+                <div class="item" style="background-image: url(slike/snake_img.png); border-radius: 15px;">
+                    <div class="content">
+                        <div class="name blurDiv" style="color: black;">Snake-game</div>
+                        <div class="des blurDiv" style="color: black;">A popular simple game snake, <br> written in javascript.</div>
+                        <a href="https://github.com/nemanja-rsumovic/snake-game" target="_blank"><button>See more</button></a>
+                    </div>
+                </div>
+                <div class="item" style="background-image: url(slike/banner4.jpg); border-radius: 15px;">
+                    <div class="content">
+                        <div class="name blurDiv">5</div>
+                        <div class="des blurDiv" style="color: red;">in progress</div>
+                        <a href="" target="_blank"><button>See more</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="buttons">
+                <button id="prev"><i class="fa-solid fa-angle-left"></i></button>
+                <button id="next"><i class="fa-solid fa-angle-right"></i></button>
+            </div>
+        </div>
+        
+    </section>
+
+
     <!-- SCHEDULES -->
     <section id="schedules" class="schedules">
         <h1>Schedules</h1>
@@ -296,9 +368,11 @@
 
     </section>
 
+
     <!-- INSTITUTIONS -->
     <section id="institutions" class="institutions">
         <h1>Institutions</h1>
+        <h4>& organizations</h4>
         <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
 
         <div class="row">
@@ -322,14 +396,6 @@
             </div>
 
             <div class="institutionsCol">
-                <a href="http://www.bg.ac.rs/" target="_blank"><img src="slike/ubLogo.jpg" alt="univerzitetLogo"></a>
-                <div class="institutionsCol row2">
-                    <h3>University of Belgrade</h3>
-                    <p>2020 - present</p> 
-                </div>
-            </div>
-
-            <div class="institutionsCol">
                 <a href="http://www.matf.bg.ac.rs/" target="_blank"><img id="matfLogo" src="slike/matfLogo2.png" alt="matfLogo"></a>
                 <div class="institutionsCol row2">
                     <h3>Faculty of Mathematics</h3>
@@ -345,8 +411,17 @@
                     <p>HR Team Member</p>
                 </div>
             </div>
+           
+            <div class="institutionsCol">
+                <a href="https://best.rs/" target="_blank"><img id="bestLogo" src="slike/bestLogo.jpg" alt="bestLogo"></a>
+                <div class="institutionsCol row2">
+                    <h3>BEST Belgrade</h3>
+                    <p>2023 - present</p>
+                    <p>IT Team Member</p>
+                </div>
+            </div>
         </div>
-
+        <!-- -->
         <div class="row row3">
             <div class="institutionsCol">
                 <h3>Elementary school <br> “Emilija Ostojic” Pozega</h3>
@@ -360,11 +435,6 @@
                 <p>mathematics class valedictorian</p>
                 <p><i class="fa fa-book" aria-hidden="true"></i> <a href="files/maturskiRad.pdf">graduation project - Limit of a function</a></p>
             </div>
-
-            <div class="institutionsCol">
-                <h3>University of Belgrade</h3>
-                <p>2020 - present</p>
-            </div>
             
             <div class="institutionsCol">
                 <h3>Faculty of Mathematics</h3>
@@ -375,6 +445,12 @@
                 <h3>Student Union of Mathematicians</h3>
                 <p>2022 - present</p>
                 <p>HR Team Member</p>
+            </div>
+
+            <div class="institutionsCol">
+                <h3>BEST Belgrade</h3>
+                <p>2023 - present</p>
+                <p>IT Team Member</p>
             </div>
         </div>
 
@@ -438,6 +514,7 @@
 
     </section>
 
+
     <!-- FOOTER -->
     <section class="footer">
 
@@ -455,39 +532,9 @@
     
     </section>
 
+
     <!-- JavaScript -->
-    <script>
-
-        let navLinks = document.getElementById("navLinks");
-
-        function showMenu(){
-            navLinks.style.right = "0";
-        }
-
-        function hideMenu(){
-            navLinks.style.right = "-200px";
-        }
-
-        let btnShow = document.getElementById("btnShow");
-        let btnHide = document.getElementById("btnHide");
-        let contactHidden = document.getElementsByClassName("contactHidden");
-        
-        btnShow.addEventListener('click', showContact);
-        btnHide.addEventListener('click', hideContact);
-
-        function showContact(){
-            for(let i in contactHidden){
-                contactHidden[i].style.display = 'block';
-            }
-        }
-
-        function hideContact(){
-            for(let i in contactHidden){
-                contactHidden[i].style.display = 'none';
-            }
-        }
-
-    </script>
+    <script src="js/script.js"></script>
     
 </body>
 </html>
