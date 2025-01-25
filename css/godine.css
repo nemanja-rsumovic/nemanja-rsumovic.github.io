@@ -159,6 +159,19 @@ i{
     opacity: 60%;
 }
 
+.prikaz2{
+    
+    border: 5px solid green;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: yellow;
+    font-weight: bold;
+    z-index: 5;
+    opacity: 60%;
+    font-size: 25px;
+    text-align: center;
+}
+
 .predavaci{
     margin-bottom: 0;
     position: absolute;
