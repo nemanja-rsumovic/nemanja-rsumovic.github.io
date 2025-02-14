@@ -1,0 +1,12 @@
+{
+  "street": "Street3",
+  "height": 11,
+  "decorations_per_banner": [
+    10,
+    2,
+    9,
+    13,
+    5
+  ],
+  "decorations_total": 50
+}
