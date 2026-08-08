@@ -3,42 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spisak datoteka i foldera</title>
+    <title>Spisak datoteka - Nemanja Ršumović</title>
+
+    <link rel="shortcut icon" type="image/png" href="slike/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        body.download-page { padding: 64px 24px; }
+        .dl-wrap { max-width: 640px; margin: 0 auto; }
+        .dl-wrap h1 {
+            font-family: var(--font-display);
+            font-size: 28px;
+            margin: 0 0 8px;
         }
-        ul {
-            list-style-type: none;
-            padding: 0;
+        .dl-wrap .eyebrow { margin-bottom: 18px; }
+        .dl-wrap p.lead { color: var(--text-dim); margin: 0 0 32px; }
+        .dl-list { display: flex; flex-direction: column; gap: 10px; }
+        .dl-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 18px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            transition: border-color .2s ease, transform .2s ease;
         }
-        li {
-            margin: 10px 0;
-        }
-        a {
-            text-decoration: none;
-            color: #007bff;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
+        .dl-item:hover { border-color: var(--accent-2); transform: translateX(4px); }
+        .dl-item i { color: var(--accent-2); font-size: 16px; }
+        .dl-item span { font-size: 14.5px; }
+        .dl-back { display: inline-flex; align-items: center; gap: 8px; margin-top: 36px; font-family: var(--font-mono); font-size: 13.5px; color: var(--text-dim); }
+        .dl-back:hover { color: var(--accent-2); }
     </style>
 </head>
-<body>
-    <h1>Spisak datoteka i foldera za preuzimanje</h1>
-    <ul>
-        <!-- Preuzimanje fajla -->
-        <li><a href="downloads/Nemanja_Rsumovic_CV.pdf" download="Nemanja_Rsumovic_CV.pdf">Nemanja_Rsumovic_CV</a></li>
-        <li><a href="downloads\Писмени задатак - поправни.pdf" download="Pismeni - popravka.pdf">(VIII)Pismeni - popravka.pdf</a></li>
-        <li><a href="downloads\Писмени задатак - исправак.pdf" download="Писмени - поправка.pdf">(VII)Pismeni - popravka.pdf</a></li>
-        <li><a href="downloads\Писмени задатак - ИОП.pdf" download="Писмени - иоп.pdf">(VII)Писмени - ИОП.pdf</a></li>
-        <li><a href="downloads\Писмени задатак - поновљени.pdf" download="Писмени - поновљени.pdf">(VI) Писмени - поновљени.pdf</a></li>
-        <li><a href="downloads\Писмени задатак - поновљени (руски).pdf" download="Писмени - поновљени (руски).pdf">(VI) Писмени - поновљени (руски).pdf</a></li>
-        <li><a href="downloads\Писмени задатак.pdf" download="Писмени.pdf">(VI) Писмени.pdf</a></li>
-         <!-- Preuzimanje foldera kao ZIP -->
-        <li><a href="downloads/rs_ulice.zip" download="folder1.zip">rs_ulice</a></li>
-        <li><a href="downloads/ip1-vezbe.zip" download="SPSS-vezbe.zip">SPSS-vezbe.zip</a></li>
-    
-    </ul>
+<body class="download-page grid-paper">
+    <div class="dl-wrap">
+        <p class="eyebrow mono">$ ls downloads/</p>
+        <h1>Spisak datoteka za preuzimanje</h1>
+        <p class="lead">Materijali i dokumenta za preuzimanje.</p>
+
+        <div class="dl-list">
+            <a class="dl-item" href="downloads/Nemanja_Rsumovic_CV.pdf" download="Nemanja_Rsumovic_CV.pdf"><i class="fa-solid fa-file-pdf"></i><span>Nemanja_Rsumovic_CV</span></a>
+            <a class="dl-item" href="downloads/Писмени задатак - поправни.pdf" download="Pismeni - popravka.pdf"><i class="fa-solid fa-file-pdf"></i><span>(VIII) Pismeni - popravka</span></a>
+            <a class="dl-item" href="downloads/Писмени задатак - исправак.pdf" download="Pismeni - popravka.pdf"><i class="fa-solid fa-file-pdf"></i><span>(VII) Pismeni - popravka</span></a>
+            <a class="dl-item" href="downloads/Писмени задатак - ИОП.pdf" download="Pismeni - iop.pdf"><i class="fa-solid fa-file-pdf"></i><span>(VII) Pismeni - IOP</span></a>
+            <a class="dl-item" href="downloads/Писмени задатак - поновљени.pdf" download="Pismeni - ponovljeni.pdf"><i class="fa-solid fa-file-pdf"></i><span>(VI) Pismeni - ponovljeni</span></a>
+            <a class="dl-item" href="downloads/Писмени задатак - поновљени (руски).pdf" download="Pismeni - ponovljeni (ruski).pdf"><i class="fa-solid fa-file-pdf"></i><span>(VI) Pismeni - ponovljeni (ruski)</span></a>
+            <a class="dl-item" href="downloads/Писмени задатак.pdf" download="Pismeni.pdf"><i class="fa-solid fa-file-pdf"></i><span>(VI) Pismeni</span></a>
+            <a class="dl-item" href="downloads/rs_ulice.zip" download="rs_ulice.zip"><i class="fa-solid fa-file-zipper"></i><span>rs_ulice</span></a>
+            <a class="dl-item" href="downloads/ip1-vezbe.zip" download="SPSS-vezbe.zip"><i class="fa-solid fa-file-zipper"></i><span>SPSS-vezbe</span></a>
+        </div>
+
+        <a href="index.html" class="dl-back"><i class="fa-solid fa-arrow-left"></i> Nazad na sajt</a>
+    </div>
 </body>
 </html>

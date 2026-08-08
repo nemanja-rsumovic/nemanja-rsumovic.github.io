@@ -1,633 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nemanja Ršumović</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nemanja Ršumović - Informatics student at the Faculty of Mathematics, University of Belgrade. Portfolio of software, data and research projects.">
+  <title>Nemanja Ršumović</title>
 
-    <link rel="shortcut icon" type="x-icon" href="slike/favicon.png">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <link rel="shortcut icon" type="image/png" href="slike/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 
-    <!-- SNOWFLAKE -->
-<!--<div class='snowflakes' aria-hidden='true'>
-        <div class='snowflake'>❅</div>
-        <div class='snowflake'>❅</div>
-        <div class='snowflake'>❅</div>
-        <div class='snowflake'>❅</div>
-        <div class='snowflake'>❅</div>
-        <div class='snowflake'>❅</div>
-        <div class='snowflake'>❅</div>
-        <div class='snowflake'>❅</div>
-        <div class='snowflake'>❅</div>
-        <div class='snowflake'>❅</div>
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#home" class="brand">&lt;NR<span class="accent">/</span>&gt;</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#timeline">Timeline</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="files/Nemanja_Rsumovic_CV.pdf" target="_blank" class="cv-link">CV ↓</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
--->
-  
-    <!-- HOME -->
-    <section id="home" class="header">
-        <nav>
-            <a href="index.html"><img src="slike/logo.png" alt="logo"></a>
-            <div id="navLinks" class="navLinks">
-                <i class="fa fa-times" onclick = hideMenu()></i>
-                <ul>
-                    <li><a href="#home">HOME</a></li>
-                    <li><a href="#studies">STUDIES</a></li>
-                    <li><a href="#projects">PROJECTS</a></li> 
-                    <li><a href="#schedules">SCHEDULES</a></li>                   
-                    <li><a href="#institutions">INSTITUTIONS</a></li>
-                    <li><a href="#contact">CONTACT</a></li>
-                </ul>
+  </nav>
 
-            </div>
-            <i id="barsMenu" class="fa fa-bars" onclick = showMenu()></i>
-        </nav>
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-grid-bg grid-paper" aria-hidden="true"></div>
+    <div class="hero-glyphs" id="heroGlyphs" aria-hidden="true"></div>
 
-        <div class="textBox">
-            <h1>Nemanja Ršumović<span class="blink">_</span></h1>
-            <p>Student at Faculty of Mathematics, University of Belgrade</p>
-            <a href="files/Nemanja_Rsumovic_CV.pdf" target="_blank" class="button">CV</a>
+    <div class="hero-inner">
+      <p class="eyebrow">nemanja@matf <span class="accent">$</span> whoami</p>
+      <h1 class="hero-title">Nemanja Ršumović<span class="cursor">_</span></h1>
+      <p class="hero-sub">Informatics student at the Faculty of Mathematics, University of Belgrade. I build software, dig into data, and teach math on the side.</p>
+
+      <div class="hero-badges">
+        <span class="badge">Belgrade, Serbia</span>
+        <span class="badge">MATF · Informatics</span>
+        <span class="badge">Math teacher &amp; tutor</span>
+      </div>
+
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View projects</a>
+        <a href="files/Nemanja_Rsumovic_CV.pdf" target="_blank" class="btn btn-outline">Download CV</a>
+      </div>
+    </div>
+
+    <a href="#projects" class="scroll-cue" aria-label="Scroll to projects"><span></span></a>
+  </section>
+
+  <!-- PROJECTS - the wow section, right after the hero -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">$ ls projects/</p>
+        <h2>Selected work</h2>
+        <p class="section-sub">A running log of what I've built - coursework, side projects, and research. New ones get added here as I make them.</p>
+      </div>
+
+      <div class="filter-bar" id="filterBar"></div>
+      <div class="projects-grid" id="projectsGrid"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT / STUDIES -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">$ cat about.md</p>
+        <h2>Studies</h2>
+      </div>
+
+      <div class="study-block reveal">
+        <h3 class="study-block-title">Master studies - Informatics</h3>
+        <p class="about-intro">One years, 60 ECTS, at the Faculty of Mathematics, University of Belgrade. Currently in progress - courses get added below as the program goes on.</p>
+        <div class="years-grid">
+          <a href="master1.html" target="_blank" class="year-card reveal">
+            <p class="num mono">01</p>
+            <h3>1st Year</h3>
+            <p>Data Mining in Bioinformatics, Geometric Algorithms, Design and Analysis of Algorithms 2 & more</p>
+            <span class="go">Open <i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+        </div>
+      </div>
+
+      <div class="study-block reveal">
+        <h3 class="study-block-title">Bachelor studies - Informatics</h3>
+        <p class="about-intro">Four years, 240 ECTS, at the Faculty of Mathematics, University of Belgrade. Each year below opens the full course breakdown.</p>
+        <div class="years-grid">
+          <a href="year1.html" target="_blank" class="year-card reveal">
+            <p class="num mono">01</p>
+            <h3>1st Year</h3>
+            <p>Programming, Discrete Structures, Linear Algebra, Analysis 1 &amp; more</p>
+            <span class="go">Course list <i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+          <a href="year2.html" target="_blank" class="year-card reveal">
+            <p class="num mono">02</p>
+            <h3>2nd Year</h3>
+            <p>Data Structures &amp; Algorithms, OOP, Operating Systems, Geometry &amp; more</p>
+            <span class="go">Course list <i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+          <a href="year3.html" target="_blank" class="year-card reveal">
+            <p class="num mono">03</p>
+            <h3>3rd Year</h3>
+            <p>Relational Databases, Computer Graphics, AI, Data Mining 1 &amp; more</p>
+            <span class="go">Course list <i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+          <a href="year4.html" target="_blank" class="year-card reveal">
+            <p class="num mono">04</p>
+            <h3>4th Year</h3>
+            <p>Computer Networks, Software Development, Data Mining 2, Data Engineering &amp; more</p>
+            <span class="go">Course list <i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section id="timeline" class="timeline">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">$ git log --all</p>
+        <h2>Timeline</h2>
+      </div>
+
+      <div class="timeline-columns">
+        <div class="timeline-col">
+          <div class="timeline-col-head"><i class="fa-solid fa-graduation-cap"></i><h3>Education</h3></div>
+          <ol class="timeline-list">
+            <li class="timeline-item is-current reveal">
+              <div class="timeline-logo"><img src="slike/matfLogo2.png" alt="Faculty of Mathematics logo"></div>
+              <div class="timeline-content">
+                <span class="timeline-date mono">2025 - <span class="now">present</span></span>
+                <h3>Faculty of Mathematics, Belgrade</h3>
+                <p>Master studies - Informatics.</p>
+              </div>
+            </li>
+            <li class="timeline-item reveal">
+              <div class="timeline-logo"><img src="slike/matfLogo2.png" alt="Faculty of Mathematics logo"></div>
+              <div class="timeline-content">
+                <span class="timeline-date mono">2020 - 2025</span>
+                <h3>Faculty of Mathematics, Belgrade</h3>
+                <p>Bachelor studies - Informatics.</p>
+              </div>
+            </li>
+            <li class="timeline-item reveal">
+              <div class="timeline-logo"><img src="slike/ssLogo.jpg" alt="Gymnasium Sveti Sava logo"></div>
+              <div class="timeline-content">
+                <span class="timeline-date mono">2016 - 2020</span>
+                <h3>Gymnasium “Sveti Sava”, Požega</h3>
+                <p>Mathematics class valedictorian.</p>
+                <a class="paper-link" href="files/maturskiRad.pdf" target="_blank"><i class="fa fa-book"></i> Graduation project - Limit of a function</a>
+              </div>
+            </li>
+            <li class="timeline-item reveal">
+              <div class="timeline-logo"><img src="slike/eoLogo.png" alt="Emilija Ostojić elementary school logo"></div>
+              <div class="timeline-content">
+                <span class="timeline-date mono">2008 - 2016</span>
+                <h3>Elementary school “Emilija Ostojić”, Požega</h3>
+                <p>Valedictorian.</p>
+              </div>
+            </li>
+          </ol>
         </div>
 
-    </section>
-
-
-    <!-- STUDIES -->
-    <section id="studies" class="studies">
-        <div class="bachelor">
-            <h1>Bachelor studies - Informatics</h1>
-            <p>The studies last <span>4 years</span> and have the extent of <span>240 ECTS</span></p>
-
-            <div class="row">
-                <div class="studiesCol">
-                    <h3>1st Year</h3>
-                    
-                    <a href="year1.html" target="_blank">
-                        <div class="studiesColDiv">
-                            <p>
-                                <br>
-                                <ul>
-                                    <li><i class="fa fa-folder-open"></i> Programming 1</li>
-                                    <li><i class="fa fa-folder-open"></i> Introduction to Computer<br><span class="hide">__-</span>Organization and Architecture 1</li>
-                                    <li><i class="fa fa-folder-open"></i> Discrete Structures 1</li>
-                                    <li><i class="fa fa-folder-open"></i> Linear Algebra and Analytic Geometry</li>
-                                    <li><i class="fa fa-folder-open"></i> English language 1</li><br>
-                                    <li><i class="fa fa-folder-open"></i> Programming 2</li>
-                                    <li><i class="fa fa-folder-open"></i> Introduction to Computer<br><span class="hide">__-</span>Organization and Architecture 2</li>
-                                    <li><i class="fa fa-folder-open"></i> Discrete Structures 2</li>
-                                    <li><i class="fa fa-folder-open"></i> Analysis 1</li>                                
-                                    <li><i class="fa fa-folder-open"></i> Technical and Scientific Writting</li>
-                                </ul>
-                        </p>
-                        </div>
-                    </a>
-
-                </div>
-
-            
-                <div class="studiesCol">
-                    <h3>2nd Year</h3>
-                    
-                    <a href="year2.html" target="_blank">
-                        <div class="studiesColDiv">
-                            <p>
-                                <br>
-                                <ul>
-                                    <li><i class="fa fa-folder-open"></i> Data Structures and Algorithms</li>
-                                    <li><i class="fa fa-folder-open"></i> Object-Oriented Programming</li>
-                                    <li><i class="fa fa-folder-open"></i> Operating Systems</li>
-                                    <li><i class="fa fa-folder-open"></i> Geometry</li>
-                                    <li><i class="fa fa-folder-open"></i> Analysis 2</li><br>
-                                    <li><i class="fa fa-folder-open"></i> Design and Analysis of Algorithms</li>
-                                    <li><i class="fa fa-folder-open"></i> Introduction to Web and Internet<br><span class="hide">__-</span>Technologies</li>
-                                    <li><i class="fa fa-folder-open"></i> Analysis 3</li>
-                                    <li><i class="fa fa-folder-open"></i> Algebra 1</li>
-                                    <li><i class="fa fa-folder-open"></i> Basics of Mechanics</li>
-                                </ul>
-                        </p>
-                        </div>
-                    </a>
-                </div>
-
-            
-                <div class="studiesCol">
-                    <h3>3rd Year</h3>
-                    
-                    <a href="year3.html" target="_blank">
-                        <div class="studiesColDiv">
-                            <p>
-                                <br>
-                                <ul>
-                                    <li><i class="fa fa-folder-open"></i> Relational Databases</li>
-                                    <li><i class="fa fa-folder-open"></i> Translation of Programming Languages</li>
-                                    <li><i class="fa fa-folder-open"></i> Computer Graphics</li>
-                                    <li><i class="fa fa-folder-open"></i> Probability</li>
-                                    <li><i class="fa fa-folder-open"></i> Introduction to Numerical<br><span class="hide">__-</span>Mathematics</li><br>
-                                    <li><i class="fa fa-folder-open"></i> Artificial Intelligence</li>
-                                    <li><i class="fa fa-folder-open"></i> Data Mining 1</li>
-                                    <li><i class="fa fa-folder-open"></i> Programming Language Paradigms</li>
-                                    <li><i class="fa fa-folder-open"></i> Database Programming</li>
-                                    <li><i class="fa fa-folder-open"></i> Statistics</li>
-                                </ul>
-                        </p>
-                        </div>
-                    </a>
-                </div>
-
-
-                <div class="studiesCol">
-                    <h3>4th Year</h3>
-                    
-                    <a href="year4.html" target="_blank">
-                        <div class="studiesColDiv">
-                            <p>
-                                <br>
-                                <ul>
-                                    <li><i class="fa fa-folder-open"></i> Computer Networks</li>
-                                    <li><i class="fa fa-folder-open"></i> Software Development</li>
-                                    <li><i class="fa fa-folder-open"></i> Software Development Tools</li>
-                                    <li><i class="fa fa-folder-open"></i> Data Mining 2</li>
-                                    <li><i class="fa fa-folder-open"></i> Application of Projective<br><span class="hide">__-</span>Geometry in Computer Science</li>
-                                    <li><i class="fa fa-folder-open"></i> Data Engineering</li>
-                                    <li><i class="fa fa-folder-open"></i> IT Project Management</li><br>
-                                    <li><i class="fa fa-folder-open"></i> Database Design</li>
-                                    <li><i class="fa fa-folder-open"></i> Special Course</li>
-                                    <li><i class="fa fa-folder-open"></i> Mathematical Modeling Basics</li>
-                                    <li><i class="fa fa-folder-open"></i> Introduction to Interactive<br><span class="hide">__-</span>Theorem Proving</li>
-                                    <li><i class="fa fa-folder-open"></i> Entrepreneurship</li>
-                                    <li><i class="fa fa-folder-open"></i> Applied Bioinformatics</li>
-                                </ul>
-                        </p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-<!--    <div class="master">
-            <h1>Master Degree studies - BioInformatics</h1>
-            <p>The studies last <span>2 years</span> and have the extent of <span>120 ECTS</span></p>
-
-            
-            <div class="rowMaster">
-                <div class="studiesCol">
-                    <h3>1st Year<br>(202x/202y)</h3>
-                    
-                    <a href="master1.html" target="_blank">
-                        <div class="studiesColDiv">
-                            <p>
-                                <br>
-                                <ul>
-                                    <li><i class="fa fa-folder-open"></i> course1</li>
-                                    <li><i class="fa fa-folder-open"></i> course2</li>
-                                    <li><i class="fa fa-folder-open"></i> course3</li>
-                                    <li><i class="fa fa-folder-open"></i> course4</li>
-                                    <li><i class="fa fa-folder-open"></i> course5</li><br>
-                                    <li><i class="fa fa-folder-open"></i> course6</li>
-                                    <li><i class="fa fa-folder-open"></i> course7</li>
-                                    <li><i class="fa fa-folder-open"></i> course8</li>
-                                    <li><i class="fa fa-folder-open"></i> course9</li>
-                                    <li><i class="fa fa-folder-open"></i> course10</li></ul>
-                        </p>
-                        </div>
-                    </a>
-
-                </div>
-
-            
-                <div class="studiesCol">
-                    <h3>2nd Year<br>(202x/202y)</h3>
-                    
-                    <a href="master2.html" target="_blank">
-                        <div class="studiesColDiv">
-                            <p>
-                                <br>
-                                <ul>
-                                    <li><i class="fa fa-folder-open"></i> course1</li>
-                                    <li><i class="fa fa-folder-open"></i> course2</li>
-                                    <li><i class="fa fa-folder-open"></i> course3</li>
-                                    <li><i class="fa fa-folder-open"></i> course4</li>
-                                    <li><i class="fa fa-folder-open"></i> course5</li><br>
-                                    <li><i class="fa fa-folder-open"></i> course6</li>
-                                    <li><i class="fa fa-folder-open"></i> course7</li>
-                                    <li><i class="fa fa-folder-open"></i> course8</li>
-                                    <li><i class="fa fa-folder-open"></i> course9</li>
-                                    <li><i class="fa fa-folder-open"></i> Master Thesis</li>
-                                </ul>
-                        </p>
-                        </div>
-                    </a>
-                </div>
-
-         
-            </div>
-        </div>
--->
-
-<!--    <div class="phd">
-            <h1>PhD - Informatics</h1>
-            <p>The studies last <span>3 years</span> and have the extent of <span>180 ECTS</span></p>
-
-            <div class="row">
-                <div class="studiesCol">
-                    <h3>1st Year <br> (202p/202q)</h3>
-                    
-                    <a href="phd1.html" target="_blank">
-                        <div class="studiesColDiv">
-                            <p>
-                                <br>
-                                <ul>
-                                    <li><i class="fa fa-folder-open"></i> course1</li>
-                                    <li><i class="fa fa-folder-open"></i> course2</li>
-                                    <li><i class="fa fa-folder-open"></i> course3</li>
-                                    <li><i class="fa fa-folder-open"></i> seminar paper 1</li><br>
-                                    <li><i class="fa fa-folder-open"></i> course4</li>
-                                    <li><i class="fa fa-folder-open"></i> course5</li>
-                                    <li><i class="fa fa-folder-open"></i> course6</li>
-                                    <li><i class="fa fa-folder-open"></i> course7</li>                                
-                                    <li><i class="fa fa-folder-open"></i> seminar paper 2</li>
-                                </ul>
-                        </p>
-                        </div>
-                    </a>
-                </div>
-
-
-                <div class="studiesCol">
-                    <h3>2nd Year <br> (202q/202r)</h3>
-                    
-                    <a href="phd2.html" target="_blank">
-                        <div class="studiesColDiv">
-                            <p>
-                                <br>
-                                <ul>
-                                    <li><i class="fa fa-folder-open"></i> course8</li>
-                                    <li><i class="fa fa-folder-open"></i> Preparation for Thesis Topic Submission</li><br>
-                                    <li><i class="fa fa-folder-open"></i> Preparation of Doctoral Dissertation 1</li>
-                                </ul>
-                        </p>
-                        </div>
-                    </a>
-                </div>
-
-            
-                <div class="studiesCol">
-                    <h3>3rd Year <br> (202r/202t)</h3>
-                    
-                    <a href="phd3.html" target="_blank">
-                        <div class="studiesColDiv">
-                            <p>
-                                <br>
-                                <ul>
-                                    <li><i class="fa fa-folder-open"></i> Preparation of Doctoral Dissertation 2</li>
-                                    <li><i class="fa fa-folder-open"></i> Preparation of Doctoral Dissertation 3</li>
-                                </ul>
-                        </p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
--->
-
-    </section>
-
-
-    <!-- PROJECTS -->
-    <section id="projects" class="projects">
-        <h1>Projects</h1>
-        <div class="container">
-            <div id="slide">
-                <div class="item" style="background-image: url(slike/banner3.jpg); border-radius: 15px;">
-                    <div class="content">
-                        <div class="name">Add more projects...</div>
-                        <div class="des" style="color: red;">in progress</div>
-                        <a href="" target="_blank"><button>See more</button></a>
-                    
-                    </div>
-                </div>
-                <div class="item" style="background-image: url(slike/audio-recorde-project.png); border-radius: 15px;">
-                    <div class="content">
-                        <div class="name blurDiv">Audio-Recorder</div>
-                        <div class="des blurDiv">A project created as part of <br> the Programming Paradigms course <br> written in the Rust programming language.
-                                        <br><br> The Audio-Recorder application is intended for recording sound and is designed to work in the terminal.</div>
-                        <a href="https://github.com/nemanja-rsumovic/2023_Audio-Recorder" target="_blank"><button>See more</button></a>
-                    </div>
-                </div>
-                <div class="item" style="background-image: url(slike/computer-graphics-project.jpg); border-radius: 15px;">
-                    <div class="content">
-                        <div class="name blurDiv">computer-graphics-project</div>
-                        <div class="des blurDiv">Project for the course of Computer Graphics written in C/C++ and OpenGL.</div>
-                        <a href="https://github.com/nemanja-rsumovic/computer-graphics-project" target="_blank"><button>See more</button></a>
-                    </div>
-                </div>
-                <div class="item" style="background-image: url(slike/data-mining-project.png); border-radius: 15px;">
-                    <div class="content">
-                        <div class="name blurDiv" style="color: black;">Brain tumor Dataset</div>
-                        <div class="blurDiv" style="color: red; font-weight: bold;"> in progress...</div>
-                        <div class="des blurDiv" style="color: black;">Project for the Data Mining course
-                                                <br><br>
-                                                The purpose of this project is to demonstrate some of the uses of:
-                                                <br>
-                                                &nbsp&nbsp&nbsp&nbsp&nbsp Classification Algorithms
-                                                <br>
-                                                &nbsp&nbsp&nbsp&nbsp&nbsp Clustering Algorithms
-                                                <br>
-                                                &nbsp&nbsp&nbsp&nbsp&nbsp Associacion Rules in SPSS
-                        </div>
-                        <a href="https://github.com/MATF-istrazivanje-podataka-1/2023_Data_Mining_Brain_tumor_Dataset" target="_blank"><button>See more</button></a>
-                    </div>
-                </div>
-                <div class="item" style="background-image: url(slike/pobedi-me-ako-znas.png); border-radius: 15px;">
-                    <div class="content">
-                        <div class="name blurDiv" style="color: whitesmoke;">pobedi-me-ako-znas</div>
-                        <div class="des blurDiv" style="color: whitesmoke;">Project for the Software Development course
-                                                <br><br>
-                                                The project "pobedi-me-ako-znas" is a quiz that includes different
-                                                <br>
-                                                types of games that test knowledge and skills in different areas.
-                                                <br>
-                                                Two players face challenging questions and tasks, fighting to score
-                                                <br>
-                                                as many points as possible in the games.
-
-                        </div>
-                        <a href="https://gitlab.com/matf-bg-ac-rs/course-rs/projects-2023-2024/pobedi-me-ako-znas"><button>See more</button></a>
-                    </div>
-                </div>
-                <div class="item" style="background-image: url(slike/banner3.jpg); border-radius: 15px;">
-                    <div class="content">
-                        <div class="name blurDiv" style="color: whitesmoke;">azrs-tracking</div>
-                        <div class="des blurDiv" style="color: whitesmoke;">Project for the Software Development Tools course
-                                                <br><br>
-                                                The purpose of tools is to improve the quality of some software.
-                                                <br>
-                                                The tools detect a problem and make changes to the source code
-                                                <br><br>
-                                                Applied tools:
-                                                <br>
-                                                &nbsp&nbsp&nbsp&nbsp&nbsp -Git & git hook
-                                                <br>
-                                                &nbsp&nbsp&nbsp&nbsp&nbsp -Qt Debugger
-                                                <br>
-                                                &nbsp&nbsp&nbsp&nbsp&nbsp -GCov
-                                                <br>
-                                                &nbsp&nbsp&nbsp&nbsp&nbsp -Valgrind
-                                                <br>
-                                                &nbsp&nbsp&nbsp&nbsp&nbsp -Bash
-                                                <br>
-                                                &nbsp&nbsp&nbsp&nbsp&nbsp -ClangFormat
-                                                <br>
-                                                &nbsp&nbsp&nbsp&nbsp&nbsp -ClangTidy
-                                                <br>
-                                                &nbsp&nbsp&nbsp&nbsp&nbsp -ClangAnalyzer
-                                                <br>
-                                                &nbsp&nbsp&nbsp&nbsp&nbsp -CMake
-                                                <br>
-                                                &nbsp&nbsp&nbsp&nbsp&nbsp -Doxygen
-                                                <br>
-                                                &nbsp&nbsp&nbsp&nbsp&nbsp -Cppcheck
-                        </div>
-                        <a href="https://github.com/MATF-istrazivanje-podataka-1/2023_Data_Mining_Brain_tumor_Dataset" target="_blank"><button>See more</button></a>
-                    </div>
-                </div>
-                <div class="item" style="background-image: url(slike/e.coli.png); border-radius: 15px;">
-                    <div class="content">
-                        <div class="name blurDiv" style="color: black;">Analysis of deviations in the occurrence of all 4 types of repetitive sequences in the pathogenic islands of the bacterium Escherichia coli</div>
-                        <div class="des blurDiv" style="color: black;">Project for the Data Mining 2 course
-                        </div>
-                        <a href="/files/e.coli-paper.pdf" target="_blank"><button>See more</button></a>
-                    </div>
-                </div>
-                <div class="item" style="background-image: url(slike/snake_img.png); border-radius: 15px;">
-                    <div class="content">
-                        <div class="name blurDiv" style="color: black;">Snake-game</div>
-                        <div class="des blurDiv" style="color: black;">A popular simple game snake, <br> written in javascript.</div>
-                        <a href="https://github.com/nemanja-rsumovic/snake-game" target="_blank"><button>See more</button></a>
-                    </div>
-                </div>
-                <div class="item" style="background-image: url(slike/tic-tac-toe.png); border-radius: 15px;">
-                    <div class="content">
-                        <div class="name blurDiv">tic-tac-toe</div>
-                        <div class="des blurDiv">A simple tic-tac-toe game written in C++</div>
-                        <a href="https://github.com/nemanja-rsumovic/tic-tac-toe" target="_blank"><button>See more</button></a>
-                    </div>
-                </div>
-            </div>
-            <div class="buttons">
-                <button id="prev"><i class="fa-solid fa-angle-left"></i></button>
-                <button id="next"><i class="fa-solid fa-angle-right"></i></button>
-            </div>
-        </div>
-        
-    </section>
-
-
-    <!-- SCHEDULES -->
-    <section id="schedules" class="schedules">
-        <h1>Schedules</h1>
-        <p>for 2022/2023</p>
-    
-        <div class="row">
-            <div class="schedulesCol rasporedLevi">
-                <p class="schedulesHidden">TIMETABLE</p>
-                <a href="files/schedule.pdf" target="_blank">
-                    <img src="slike/rasporedLevi.jpg" alt="rasporedCasova">
-                    <div class="layer">
-                        <h3>TIMETABLE</h3>
-                    </div>
-                </a>
-            </div>
-
-            <!-- <div class="schedulesCol">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus velit nobis, fugit ut ea enim nulla earum quia quibusdam veniam accusamus repellendus voluptas ipsum iure soluta pariatur consequuntur optio facilis!</p>
-            </div> -->
-
-            <div class="schedulesCol rasporedDesni">
-                <p class="schedulesHidden">ACADEMIC CALENDAR</p>
-                <a href="files/kalendarAktivnosti.pdf" target="_blank">
-                    <img src="slike/rasporedDesni.jpg" alt="rasporedAktivnosti">
-                    <div class="layer">
-                        <h3>ACADEMIC CALENDAR</h3>
-                    </div>
-                </a>
-            </div>
-        
-        </div>
-
-    </section>
-
-
-    <!-- INSTITUTIONS -->
-    <section id="institutions" class="institutions">
-        <h1>Institutions</h1>
-        <h4>& organizations</h4>
-        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
-
-        <div class="row">
-            <div class="institutionsCol">
-                <a href="http://www.osemilijaostojic.edu.rs/" target="_blank"><img id="eoLogo" src="slike/eoLogo.png" alt="emilijaOstojicLogo"></a>
-                <div class="institutionsCol row2">
-                    <h3>Elementary school <br> “Emilija Ostojic” Pozega</h3>
-                    <p>2008 - 2016</p>
-                    <p>valedictorian</p>
-                </div>
-            </div>
-
-            <div class="institutionsCol">
-                <a href="http://www.gimnazijapozega.edu.rs/" target="_blank"><img src="slike/ssLogo.jpg" alt="svetiSavaLogo"></a>
-                <div class="institutionsCol row2">
-                    <h3>Gymnasium <br> “Sveti Sava” Pozega</h3>
-                    <p>2016 - 2020</p>
-                    <p>mathematics class valedictorian</p>
-                    <p><i class="fa fa-book" aria-hidden="true"></i> <a href="files/maturskiRad.pdf">graduation project - Limit of a function</a></p>
-                </div>
-            </div>
-
-            <div class="institutionsCol">
-                <a href="http://www.matf.bg.ac.rs/" target="_blank"><img id="matfLogo" src="slike/matfLogo2.png" alt="matfLogo"></a>
-                <div class="institutionsCol row2">
-                    <h3>Faculty of Mathematics</h3>
-                <p>2020 - present</p>
-                </div>
-            </div>
-
-            <div class="institutionsCol">
-                <a href="https://www.sumamatf.rs/" target="_blank"><img id="sumaLogo" src="slike/sumaLogo.png" alt="sumaLogo"></a>
-                <div class="institutionsCol row2">
-                    <h3>Student Union of Mathematicians</h3>
-                    <p>Mar 2022 - Dec 2023</p>
-                    <p>HR Team Member</p>
-                </div>
-            </div>
-           
-            <div class="institutionsCol">
-                <a href="https://best.rs/" target="_blank"><img id="bestLogo" src="slike/bestLogo.jpg" alt="bestLogo"></a>
-                <div class="institutionsCol row2">
-                    <h3>BEST Belgrade</h3>
-                    <p>Mar 2023 - Mar 2024</p>
-                    <p>IT Team Member</p>
-                </div>
-            </div>
-        </div>
-        <!-- -->
-        <div class="row row3">
-            <div class="institutionsCol">
-                <h3>Elementary school <br> “Emilija Ostojic” Pozega</h3>
-                <p>2008 - 2016</p>
-                <p>valedictorian</p>
-            </div>
-
-            <div class="institutionsCol">
-                <h3>Gymnasium <br> “Sveti Sava” Pozega</h3>
-                <p>2016 - 2020</p>
-                <p>mathematics class valedictorian</p>
-                <p><i class="fa fa-book" aria-hidden="true"></i> <a href="files/maturskiRad.pdf">graduation project - Limit of a function</a></p>
-            </div>
-            
-            <div class="institutionsCol">
-                <h3>Faculty of Mathematics</h3>
-                <p>2020 - present</p>
-            </div>
-
-            <div class="institutionsCol">
-                <h3>Student Union of Mathematicians</h3>
-                <p>Mar 2022 - Dec 2023</p>
-                <p>HR Team Member</p>
-            </div>
-
-            <div class="institutionsCol">
+        <div class="timeline-col">
+          <div class="timeline-col-head"><i class="fa-solid fa-briefcase"></i><h3>Experience</h3></div>
+          <ol class="timeline-list">
+                        <li class="timeline-item is-current reveal">
+              <div class="timeline-logo placeholder">VK</div>
+              <div class="timeline-content">
+                <span class="timeline-date mono">Mar 2025 - <span class="now">present</span></span>
+                <h3>Math Teacher - Elementary school “Vuk Karadžić”, Belgrade</h3>
+                <p>Teaching mathematics across grades 5-8 at one of Belgrade's oldest elementary schools, in Stari Grad.</p>
+                <a class="paper-link" href="http://www.osnovnaskolavukkaradzic.edu.rs/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> School website</a>
+              </div>
+            </li>
+            <li class="timeline-item reveal">
+              <div class="timeline-logo"><img src="slike/bestLogo.jpg" alt="BEST Belgrade logo"></div>
+              <div class="timeline-content">
+                <span class="timeline-date mono">Mar 2023 - Mar 2024</span>
                 <h3>BEST Belgrade</h3>
-                <p>Mar 2023 - Mar 2024</p>
                 <p>IT Team Member</p>
-            </div>
+              </div>
+            </li>
+            <li class="timeline-item reveal">
+              <div class="timeline-logo"><img src="slike/sumaLogo.png" alt="Student Union of Mathematicians logo"></div>
+              <div class="timeline-content">
+                <span class="timeline-date mono">Mar 2022 - Dec 2023</span>
+                <h3>Student Union of Mathematicians</h3>
+                <p>HR Team Member</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="quick-links reveal">
+        <a href="files/schedule.pdf" target="_blank"><i class="fa fa-calendar"></i> Timetable</a>
+        <a href="files/kalendarAktivnosti.pdf" target="_blank"><i class="fa fa-calendar-check"></i> Academic calendar</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">$ mail --compose</p>
+        <h2>Get in touch</h2>
+        <p class="section-sub">Have a project, a question, or just want to say hi? Send a message.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <div class="contact-row">
+            <i class="fa fa-location-dot"></i>
+            <span><h5>Currently in</h5><p>Belgrade, Serbia</p></span>
+          </div>
+          <div class="contact-row">
+            <i class="fa fa-envelope"></i>
+            <span><h5>Email</h5><a href="mailto:rsumovicnemanja01@gmail.com">rsumovicnemanja01@gmail.com</a></span>
+          </div>
+
+          <div class="social-row">
+            <a href="https://rs.linkedin.com/in/nemanja-rsumovic" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/nemanja-rsumovic" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://gitlab.com/nemanja-rsumovic" target="_blank" aria-label="GitLab"><i class="fa-brands fa-gitlab"></i></a>
+            <a href="mailto:rsumovicnemanja01@gmail.com" aria-label="Gmail"><i class="fa fa-at"></i></a>
+            <a href="https://www.instagram.com/nemanja.rsumovic/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+
+          <div class="map-frame">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d90606.83773202886!2d20.413670607450797!3d44.791738236425225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a7aa3d7b53fbd%3A0x1db8645cf2177ee4!2z0JHQtdC-0LPRgNCw0LQ!5e0!3m2!1ssr!2srs!4v1657920410656!5m2!1ssr!2srs" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
         </div>
 
-    </section>
-    
+        <form class="contact-form reveal" action="https://formsubmit.co/rsumovicnemanja01@gmail.com" method="POST">
+          <input type="hidden" name="_next" value="https://nemanja-rsumovic.github.io/thankyou.html">
+          <div class="form-row">
+            <input type="text" name="name" placeholder="Your name" required>
+            <input type="email" name="email" placeholder="Your email" required>
+          </div>
+          <input type="text" name="subject" placeholder="Subject" required>
+          <textarea rows="7" name="message" placeholder="Message..." required></textarea>
+          <button type="submit" class="btn btn-primary">Send message</button>
+        </form>
+      </div>
+    </div>
+  </section>
 
-    <!-- CONTACT ME -->
-    <section id="contact" class="contact">
-        <section class="contactShowHide">
-            <h1>CONTACT ME</h1>
-            <button id="btnShow" class="button">SHOW</button>
-            <button id="btnHide" class="button">HIDE</button>
-        </section>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="icons">
+      <a href="https://rs.linkedin.com/in/nemanja-rsumovic" target="_blank" aria-label="LinkedIn"><img src="slike/linkedIn.png" alt="LinkedIn"></a>
+      <a href="https://github.com/nemanja-rsumovic" target="_blank" aria-label="GitHub"><img src="slike/gitHub.png" alt="GitHub"></a>
+      <a href="https://gitlab.com/nemanja-rsumovic" target="_blank" aria-label="GitLab"><img src="slike/gitlab.png" alt="GitLab"></a>
+      <a href="mailto:rsumovicnemanja01@gmail.com" aria-label="Gmail"><img src="slike/gmail.png" alt="Gmail"></a>
+      <a href="https://www.instagram.com/nemanja.rsumovic/" target="_blank" aria-label="Instagram"><img src="slike/instagram.png" alt="Instagram"></a>
+    </div>
+    <p>© <span id="year">2026</span> Nemanja Ršumović</p>
+  </footer>
 
-        <section class="location contactHidden">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d90606.83773202886!2d20.413670607450797!3d44.791738236425225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a7aa3d7b53fbd%3A0x1db8645cf2177ee4!2z0JHQtdC-0LPRgNCw0LQ!5e0!3m2!1ssr!2srs!4v1657920410656!5m2!1ssr!2srs" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </section>
-        
-        <section class="contactUs contactHidden">
-    
-            <div class="row">
-                <div class="contactCol">
-                    <div>
-                        <i class="fa fa-home" style="color: rgb(160, 220, 190);"></i>
-                        <span>
-                            <h5>Currently in</h5>
-                            <p>Belgrade, Serbia</p>
-                        </span>
-                    </div>
-    
-                    <div>
-                        <i class="fa fa-phone" style="color: rgb(160, 220, 190);"></i>
-                        <span>
-                            <h5>Call me</h5>
-                            <p>+unavailable</p>
-                        </span>
-                    </div>
-    
-                    <div>
-                        <i class="fa fa-envelope" style="color: rgb(160, 220, 190);"></i>
-                        <span>
-                            <h5>Email me</h5>
-                            <p>rsumovicnemanja01@gmail.com</p>
-                        </span>
-                    </div>
-                </div>
-    
-                <div class="contactCol">
-                    <form action="https://formsubmit.co/rsumovicnemanja01@gmail.com" method="POST">
-                        <input type="email" name="email" placeholder="Enter your email adress" required>
-                        <input type="hidden" name="_next" value="https://nemanja-rsumovic.github.io/thankyou.html">
-                        <input type="text" name="name" placeholder="Enter your name" required>
-                        <input type="text" name="subject" placeholder="Enter your subject" required>
-                        <textarea rows="8" name="message" placeholder="Message..." required></textarea>
-                        <button type="submit" class="button redBtn">Send</button>
-                    </form>
-                </div>
-    
-            </div>
-        </section>
-
-    </section>
-
-
-    <!-- FOOTER -->
-    <section class="footer">
-
-        <!-- <h4>About Me</h4>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem quia ducimus quam saepe amet nemo porro possimus <br> ea repudiandae accusamus provident assumenda sit, non sequi optio est officia velit illum!</p> -->
-
-        <div class="icons">
-            <a href="https://rs.linkedin.com/in/nemanja-rsumovic" id="linkedIn" target="_blank"><img src="slike/linkedIn.png"  alt="linkedIn" title="LinkedIn"></a>
-            <a href="https://github.com/nemanja-rsumovic" id="gitHub" target="_blank"><img src="slike/gitHub.png"  alt="gitHub" title="GitHub"></a>
-            <a href="https://gitlab.com/nemanja-rsumovic" id="gitLab" target="_blank"><img src="slike/gitlab.png"  alt="gitLab" title="GitLab"></a>
-            <a href="mailto:rsumovicnemanja01@gmail.com" id="gmail" target="_blank"><img src="slike/gmail.png" alt="gmail" title="Gmail"></a>
-            <a href="mailto:mi20091@alas.matf.bg.ac.rs" target="_blank"><img src="slike/squirrelMail.png" id="squirrelMail" alt="squirrelMail" title="SquirrelMail"></a>
-            <a href="https://www.instagram.com/nemanja.rsumovic/" id="instagram" target="_blank"><img src="slike/instagram.png"  alt="instagram" title="Instagram"></a>        
-        </div>
-        <p>© 2024 Nemanja Ršumović</p>
-    
-    </section>
-
-
-    <!-- JavaScript -->
-    <script src="js/script.js"></script>
-    
+  <script src="js/projects-data.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

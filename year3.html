@@ -1,200 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>III godina</title>
-    <link rel="stylesheet" href="css/godine.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nemanja Ršumović</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+  <link rel="shortcut icon" type="image/png" href="slike/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <link rel="stylesheet" href="css/main.css">
 </head>
-<body style="background-image: linear-gradient(rgba(4,9,30,0.4),rgba(4,9,30,0.4)), url('slike/banner5.jpg');">
+<body class="course-page">
 
-    <div class="prikaz2">
-        MATERIJALI NISU POSTAVLJENI NA SAJT<br>PREUZIMANJE ZAKLJUCANIH DATOTEKA JE ONEMOGUCENO! 
+  <nav class="course-nav">
+    <div class="nav-inner">
+      <a href="index.html#about" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to portfolio</a>
+      <a href="index.html" class="brand">&lt;NR<span class="accent">/</span>&gt;</a>
     </div>
+  </nav>
 
-    <section class="semestarPeti">
+  <section class="course-hero">
+    <div class="hero-grid-bg grid-paper" aria-hidden="true"></div>
+    <div class="container course-hero-inner">
+      <p class="eyebrow" id="courseEyebrow">$ cat courses.md</p>
+      <h1 id="courseHeroTitle">Loading...</h1>
+      <p id="courseHeroSub"></p>
+    </div>
+  </section>
 
-        <div class="semestar"> <h1>V semestar</h1> </div>
+  <section class="course-content">
+    <div class="container" id="courseContent"></div>
+  </section>
 
-        <div class="row">
+  <footer class="footer">
+    <p>&copy; <span id="year">2026</span> Nemanja Ršumović</p>
+  </footer>
 
-            <div class="courseCol"> 
-                
-                <h3><a href="files/predmeti/rbp.pdf" target="_blank">Relacione baze podataka</a></h3>
-                        
-                <div class="courseColDiv">
-                
-                    <br>
-                    <ul>
-                        <li><i class="fa fa-terminal"></i></li><br>
-                        <li><i class="fa fa-terminal"></i></li><br>
-                        <li><i class="fa fa-terminal"></i></li><br>
-
-                    </ul>
-                
-                </div>
-
-                <div>
-                    <p class="predavaci">Mirjana Maljković<br>Ivana Tomaševic<br>Milica Gnjatović</p>
-                </div>
-
-            </div>
-
-            <div class="courseCol"> 
-                
-                <h3><a href="files/predmeti/ppj.pdf" target="_blank">Prevođenje programskih<br>jezika</a></h3>
-                        
-                <div class="courseColDiv">
-                
-                
-                </div>
-
-                <div>
-                    <p class="predavaci">Milan Banković<br>Vladimir Kuzmanović</p>
-                </div>
-
-            </div>
-
-            <div class="courseCol"> 
-                
-                <h3><a href="files/predmeti/rg.pdf" target="_blank">Računarska grafika</a></h3>
-                        
-                <div class="courseColDiv">
-                
-                </div>
-
-                <div>
-                    <p class="predavaci">Vesna Marinković<br>Marko Spasić</p>
-                </div>
-
-            </div>
-
-            <div class="courseCol"> 
-                
-                <h3><a href="files/predmeti/v.pdf" target="_blank">Verovatnoća</a></h3>
-                        
-                <div class="courseColDiv">
-                
-                
-                </div>
-
-                <div>
-                    <p class="predavaci">Milan Jovanović<br>Mihajlo Srbakoski</p>
-                </div>
-
-            </div>
-
-            <div class="courseCol"> 
-                
-                <h3><a href="files/predmeti/unm.pdf" target="_blank">Uvod u numeričku<br>matematiku</a></h3>
-                        
-                <div class="courseColDiv">
-                
-                
-                </div>
-
-                <div>
-                    <p class="predavaci">Sandra Živanović<br>Kristina Kostić</p>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <section class="semestarSesti">
-
-        <div class="semestar"> <h1>VI semestar</h1> </div>
-
-        <div class="row">
-
-            <div class="courseCol"> 
-                
-                <h3><a href="files/predmeti/vi.pdf" target="_blank">Veštačka inteligencija</a></h3>
-                        
-                <div class="courseColDiv">
-                
-                    <br>
-                    <ul>
-                        <li><i class="fa fa-terminal"></i></li><br>
-                        <li><i class="fa fa-terminal"></i></li><br>
-                        <li><i class="fa fa-terminal"></i></li><br>
-
-                    </ul>
-                
-                </div>
-
-                <div>
-                    <p class="predavaci">Mladen Nikolić<br>Denis Aličić</p>
-                </div>
-
-            </div>
-
-            <div class="courseCol"> 
-                
-                <h3><a href="files/predmeti/ip1.pdf" target="_blank">Istraživanje podataka 1</a></h3>
-                        
-                <div class="courseColDiv">
-                
-                </div>
-
-                <div>
-                    <p class="predavaci">Nenad Mitić<br>Marija Erić</p>
-                </div>
-
-            </div>
-
-            <div class="courseCol"> 
-                
-                <h3><a href="files/predmeti/pp.pdf" target="_blank">Programske paradigme</a></h3>
-                        
-                <div class="courseColDiv">
-                
-                </div>
-
-                <div>
-                    <p class="predavaci">Milena Vujošević Janičić<br>Milan Čugurović</p>
-                </div>
-
-            </div>
-
-            <div class="courseCol"> 
-                
-                <h3><a href="files/predmeti/pbp.pdf" target="_blank">Programiranje baza podataka</a></h3>
-                        
-                <div class="courseColDiv">
-                
-                
-                </div>
-
-                <div>
-                    <p class="predavaci">Nina Radojičić Matić<br>Luka Jović</p>
-                </div>
-
-            </div>
-
-            <div class="courseCol"> 
-                
-                <h3><a href="files/predmeti/s.pdf" target="_blank">Statistika</a></h3>
-                        
-                <div class="courseColDiv">
-            
-                
-                </div>
-
-                <div>
-                    <p class="predavaci">Bojana Milošević<br>Mihajlo Srbakoski</p>
-                </div>
-
-            </div>
-
-
-        </div>
-    </section>
-    
+  <script src="js/year3-data.js"></script>
+  <script src="js/courses.js"></script>
 </body>
 </html>
