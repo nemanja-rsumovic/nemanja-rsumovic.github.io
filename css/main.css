@@ -415,6 +415,22 @@ section { position: relative; padding: 96px 0; }
   color: var(--text-dimmer);
 }
 
+.note-card {
+  border-style: dashed;
+  border-color: var(--accent-2-soft);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 8px;
+  padding: 40px 26px;
+}
+.note-card i { font-size: 24px; color: var(--accent-2); margin-bottom: 4px; }
+.note-card p.mono { color: var(--text); font-size: 13.5px; margin: 0; }
+.note-card .note-sub { color: var(--text-dimmer); font-size: 13px; margin: 0 0 6px; }
+.note-card .project-link { margin-top: 4px; }
+.note-card:hover { transform: none; box-shadow: none; border-color: var(--accent-2-soft); }
+.note-card::before, .note-card::after { display: none; }
+
 .more-card {
   border-style: dashed;
   align-items: center;

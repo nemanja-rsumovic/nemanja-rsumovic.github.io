@@ -104,6 +104,18 @@ function cardMarkup(p) {
     </article>`;
 }
 
+function noteCardMarkup() {
+  return `
+    <article class="project-card note-card reveal">
+      <i class="fa-solid fa-hourglass-half"></i>
+      <p class="mono">a few newer projects are on their way</p>
+      <p class="note-sub">in the meantime, you can find them in my CV</p>
+      <a class="project-link" href="files/Nemanja_Rsumovic_CV.pdf" target="_blank" rel="noopener">
+        <i class="fa-solid fa-file-pdf"></i> View CV
+      </a>
+    </article>`;
+}
+
 function moreCardMarkup() {
   return `
     <article class="project-card more-card reveal">
@@ -113,7 +125,7 @@ function moreCardMarkup() {
 }
 
 function renderProjects() {
-  const cardsHtml = PROJECTS.map(cardMarkup).join("") + moreCardMarkup();
+  const cardsHtml = noteCardMarkup() + PROJECTS.map(cardMarkup).join("") + moreCardMarkup();
   grid.innerHTML = cardsHtml;
   document.querySelectorAll(".project-card.reveal").forEach((el) => revealObserver.observe(el));
 }
@@ -132,7 +144,7 @@ function renderFilters() {
       filterBar.querySelectorAll(".filter-btn").forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
       const filter = btn.dataset.filter;
-      document.querySelectorAll(".project-card:not(.more-card)").forEach((card) => {
+      document.querySelectorAll(".project-card:not(.more-card):not(.note-card)").forEach((card) => {
         const match = filter === "all" || card.dataset.category === filter;
         card.classList.toggle("hidden-by-filter", !match);
       });
