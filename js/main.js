@@ -162,3 +162,20 @@ renderFilters();
    ========================================================================== */
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+/* ==========================================================================
+   Floating CTA -> nastava/ - pojavi se posle kratke pauze na svakom
+   ucitavanju stranice. X je zatvara samo za taj prikaz - refresh je vraca.
+   ========================================================================== */
+const nastavaBubble = document.getElementById("nastavaBubble");
+if (nastavaBubble) {
+  setTimeout(() => nastavaBubble.classList.add("show"), 500);
+
+  const nbClose = document.getElementById("nastavaBubbleClose");
+  if (nbClose) {
+    nbClose.addEventListener("click", (e) => {
+      e.preventDefault();
+      nastavaBubble.classList.remove("show");
+    });
+  }
+}

@@ -1,0 +1,715 @@
+/* ==========================================================================
+   Nastava - javna sekcija za materijale i ocene (nastava/*.html)
+   Nasledjuje tokene iz main.css (ucitava se posle njega).
+   Data-driven: js/nastava.js + js/nastava-hub.js + js/nastava-godina-*.js
+   ========================================================================== */
+:root {
+  --sg: #e6465b;                 /* akcenat Savremene - koristi se stedljivo */
+  --sg-soft: rgba(230, 70, 91, 0.13);
+  --sg-line: rgba(230, 70, 91, 0.32);
+}
+
+body.nastava-page {
+  background: var(--bg);
+  min-height: 100svh;
+}
+
+/* ==========================================================================
+   NAV
+   ========================================================================== */
+.nastava-nav {
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid transparent;
+  background: rgba(11, 15, 13, 0.82);
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  transition: border-color .3s ease, box-shadow .3s ease;
+}
+.nastava-nav.scrolled {
+  border-bottom-color: var(--border-soft);
+  box-shadow: 0 14px 34px -22px rgba(0, 0, 0, 0.6);
+}
+.nastava-nav .nav-inner { justify-content: space-between; }
+.nastava-nav .brand-group { display: flex; align-items: center; gap: 11px; min-width: 0; }
+.nastava-nav .brand-logo {
+  width: 36px; height: 36px;
+  border-radius: 10px;
+  flex-shrink: 0;
+  padding: 3px;
+  border: 1px solid var(--sg-line);
+  background: var(--surface);
+  box-shadow: 0 4px 14px -6px rgba(230, 70, 91, 0.5);
+}
+.nastava-nav .brand-logo img { width: 100%; height: 100%; object-fit: contain; }
+.nastava-nav .brand-text {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.nastava-nav .brand-text span { color: var(--text-dimmer); font-weight: 500; }
+.nastava-nav .back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--text-dim);
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.nastava-nav .back-link {
+  padding: 7px 12px;
+  border-radius: 999px;
+  transition: color .2s ease, background .2s ease;
+}
+.nastava-nav .back-link:hover { color: var(--accent-2); background: var(--surface); }
+
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+.nastava-hero {
+  position: relative;
+  padding: 72px 0 56px;
+  border-bottom: 1px solid var(--border-soft);
+  overflow: hidden;
+}
+.nastava-hero::before,
+.nastava-hero::after {
+  content: "";
+  position: absolute;
+  width: 380px; height: 380px;
+  border-radius: 50%;
+  filter: blur(95px);
+  z-index: 0;
+  pointer-events: none;
+}
+.nastava-hero::before { top: -180px; left: -90px; background: radial-gradient(circle, rgba(230, 70, 91, 0.22), transparent 70%); }
+.nastava-hero::after { bottom: -220px; right: -110px; background: radial-gradient(circle, rgba(126, 224, 195, 0.14), transparent 70%); }
+
+/* Plivajući matematički simboli - isti motiv (i @keyframes float) kao
+   .hero-glyphs na glavnom sajtu, main.css. */
+.nastava-glyphs { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+.nastava-glyphs span {
+  position: absolute;
+  font-family: var(--font-mono);
+  color: var(--accent-2);
+  opacity: 0.13;
+  animation: float 14s ease-in-out infinite;
+}
+.nastava-glyphs span:nth-child(3n) { color: var(--sg); }
+.nastava-glyphs span:nth-child(3n+1) { color: var(--accent); }
+
+.nastava-hero .hero-grid-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(126, 224, 195, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(126, 224, 195, 0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(ellipse 70% 80% at 22% 30%, #000 20%, transparent 78%);
+}
+.nastava-hero-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.nastava-hero .hero-logo {
+  position: relative;
+  width: 122px; height: 122px;
+  flex-shrink: 0;
+  border-radius: 27px;
+  padding: 17px;
+  border: 3px solid transparent;
+  background:
+    linear-gradient(var(--surface), var(--surface)) padding-box,
+    conic-gradient(from 210deg, #f5b942, #e6465b, #3d5aa1, #4a9950, #f5b942) border-box;
+  box-shadow:
+    0 24px 55px -22px rgba(230, 70, 91, 0.45),
+    0 0 0 1px rgba(255, 255, 255, 0.02) inset;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.nastava-hero .hero-logo::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: inherit;
+  padding: 3px;
+  background: conic-gradient(from 210deg, #f5b942, #e6465b, #3d5aa1, #4a9950, #f5b942);
+  filter: blur(9px);
+  opacity: 0.35;
+  z-index: -1;
+}
+.nastava-hero .hero-logo img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3)); }
+.nastava-hero .hero-logo:hover { transform: translateY(-2px); }
+.nastava-hero .eyebrow { color: var(--text-dim); margin-bottom: 12px; }
+.nastava-hero .eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--sg);
+  box-shadow: 0 0 0 3px var(--sg-soft);
+}
+.nastava-hero .eyebrow b { color: var(--sg); font-weight: 500; }
+.nastava-hero h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(30px, 5.5vw, 48px);
+  line-height: 1.05;
+  margin: 0 0 10px;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, var(--text) 45%, var(--text-dim) 130%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.nastava-hero .hero-sub { color: var(--text-dim); font-size: 16px; margin: 0 0 20px; max-width: 540px; }
+.nastava-hero .hero-badges { display: flex; flex-wrap: wrap; gap: 9px; }
+.nastava-hero .badge {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--surface);
+  transition: transform .2s ease, border-color .2s ease, color .2s ease;
+}
+.nastava-hero .badge:hover { transform: translateY(-2px); border-color: var(--accent-2); color: var(--text); }
+.nastava-hero .hero-stat {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-dimmer);
+  margin: 18px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.nastava-hero .hero-stat i { color: var(--accent-2); }
+.nastava-hero .hero-stat:empty { display: none; }
+
+@media (max-width: 620px) {
+  .nastava-hero { padding: 52px 0 42px; }
+  .nastava-hero-inner { flex-direction: column; align-items: flex-start; gap: 22px; }
+  .nastava-hero .hero-logo { width: 84px; height: 84px; border-radius: 20px; padding: 11px; border-width: 2px; }
+}
+
+/* ==========================================================================
+   SUB-NAV - lepljiva traka za brzi skok izmedju Ocene/Prezentacije/Zadaci,
+   sa scrollspy oznakom aktivne sekcije (js/nastava.js#renderSubNav)
+   ========================================================================== */
+.sub-nav {
+  position: sticky;
+  top: var(--nav-h);
+  z-index: 40;
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 12px max(28px, calc((100vw - var(--maxw)) / 2 + 28px));
+  background: rgba(11, 15, 13, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-soft);
+}
+.sub-nav::-webkit-scrollbar { display: none; }
+.sub-nav a {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--text-dim);
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition: color .18s ease, background .18s ease, border-color .18s ease;
+}
+.sub-nav a i { font-size: 11px; color: var(--text-dimmer); transition: color .18s ease; }
+.sub-nav a:hover { color: var(--text); background: var(--surface); }
+.sub-nav a.active { color: var(--accent-2); background: var(--accent-2-soft); border-color: var(--accent-2-soft); }
+.sub-nav a.active i { color: var(--accent-2); }
+
+/* ==========================================================================
+   SADRZAJ - zajednicko
+   ========================================================================== */
+.nastava-content { padding: 60px 0 96px; }
+
+.blok { margin-bottom: 64px; }
+.blok:last-child { margin-bottom: 0; }
+.blok-head { margin: 0 0 6px; }
+.blok-head h2 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-display);
+  font-size: clamp(20px, 3vw, 26px);
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+.blok-head h2::before {
+  content: "";
+  flex-shrink: 0;
+  width: 4px; height: 22px;
+  border-radius: 3px;
+  background: linear-gradient(180deg, var(--accent-2), var(--sg));
+}
+.blok-desc {
+  color: var(--text-dim);
+  font-size: 14px;
+  margin: 0 0 28px;
+  max-width: 560px;
+}
+
+/* ==========================================================================
+   HUB - kartice godina
+   ========================================================================== */
+.godine-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.godina-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--border);
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 28px 26px 24px;
+  display: flex;
+  flex-direction: column;
+  min-height: 210px;
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease, opacity .5s ease;
+}
+.godina-card {
+  background-image: radial-gradient(220px 140px at 105% -10%, rgba(230, 70, 91, 0.09), transparent 70%);
+}
+.godina-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--sg-line);
+  border-left-color: var(--sg);
+  box-shadow: 0 22px 50px -28px rgba(230, 70, 91, 0.45);
+}
+.godina-card .gc-num {
+  position: absolute;
+  top: 6px; right: 18px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 90px;
+  line-height: 1;
+  color: var(--text);
+  opacity: 0.05;
+  pointer-events: none;
+}
+.godina-card h2 {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 14px;
+  letter-spacing: -0.01em;
+}
+.godina-card .gc-teme {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 22px;
+}
+.godina-card .gc-teme span {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-dim);
+  background: var(--surface-2);
+  border: 1px solid var(--border-soft);
+  padding: 4px 9px;
+  border-radius: 6px;
+}
+.godina-card .gc-go {
+  margin-top: auto;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--accent-2);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: gap .2s ease, color .2s ease;
+}
+.godina-card:hover .gc-go { gap: 12px; color: var(--accent); }
+
+.godina-card.soon {
+  grid-column: 1 / -1;
+  min-height: 0;
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+  border-style: dashed;
+  border-left-style: dashed;
+  background: transparent;
+  padding: 18px 26px;
+  color: var(--text-dimmer);
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+.godina-card.soon:hover { transform: none; box-shadow: none; border-color: var(--border); border-left-color: var(--border); }
+.godina-card.soon .plus {
+  flex-shrink: 0;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  border: 1px dashed var(--border);
+  color: var(--accent-2);
+  font-size: 15px;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* Signature bracket corners */
+.godina-card:not(.soon)::before,
+.godina-card:not(.soon)::after {
+  content: "";
+  position: absolute;
+  width: 15px; height: 15px;
+  border: 2px solid var(--sg);
+  opacity: 0;
+  transition: opacity .25s ease, transform .25s ease;
+  pointer-events: none;
+}
+.godina-card:not(.soon)::before { top: 9px; left: 9px; border-right: none; border-bottom: none; transform: translate(-4px, -4px); }
+.godina-card:not(.soon)::after { bottom: 9px; right: 9px; border-left: none; border-top: none; transform: translate(4px, 4px); }
+.godina-card:not(.soon):hover::before,
+.godina-card:not(.soon):hover::after { opacity: 1; transform: translate(0, 0); }
+
+/* ==========================================================================
+   GODINA - sekcija (zajednicki okvir)
+   ========================================================================== */
+.sekcija { margin-bottom: 56px; }
+.sekcija:last-child { margin-bottom: 0; }
+
+.sekcija-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 14px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid transparent;
+  border-image: linear-gradient(90deg, var(--border-soft) 0%, var(--border-soft) 40%, transparent 100%) 1;
+}
+.sekcija-head .s-ico {
+  width: 32px; height: 32px;
+  border-radius: 9px;
+  background: var(--accent-2-soft);
+  color: var(--accent-2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 1px var(--accent-2-soft);
+}
+.sekcija-head.locked .s-ico { background: var(--sg-soft); color: var(--sg); box-shadow: 0 0 0 1px var(--sg-soft); }
+.sekcija-head h2 {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 600;
+  margin: 0;
+  flex: 1;
+}
+.sekcija-head .s-count {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-dimmer);
+  background: var(--surface-2);
+  border: 1px solid var(--border-soft);
+  padding: 3px 9px;
+  border-radius: 999px;
+}
+.sekcija-desc {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-dimmer);
+  margin: -4px 0 18px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.sekcija-desc i { color: var(--sg); }
+
+/* ==========================================================================
+   GODINA - ocene (grid kartica po odeljenju)
+   ========================================================================== */
+.ocene-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.ocena-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--sg-line);
+  background:
+    linear-gradient(150deg, var(--sg-soft), transparent 70%),
+    var(--surface);
+  border-radius: var(--radius);
+  padding: 22px 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.ocena-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--sg), #f5b942);
+  opacity: 0.85;
+}
+.ocena-card:hover { transform: translateY(-4px); border-color: var(--sg); box-shadow: 0 18px 40px -22px rgba(230, 70, 91, 0.55); }
+.ocena-card .oc-lock {
+  width: 30px; height: 30px;
+  border-radius: 8px;
+  background: var(--sg-soft);
+  color: var(--sg);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px;
+  transition: transform .2s ease;
+}
+.ocena-card:hover .oc-lock { transform: scale(1.08) rotate(-4deg); }
+.ocena-card .oc-odelj {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+}
+.ocena-card .oc-go {
+  margin-top: 2px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--sg);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap .2s ease;
+}
+.ocena-card .oc-go i { transition: transform .2s ease; }
+.ocena-card:hover .oc-go { gap: 9px; }
+
+@media (max-width: 780px) { .ocene-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 420px) { .ocene-grid { grid-template-columns: 1fr; } }
+
+/* ==========================================================================
+   GODINA - filter po odeljenju
+   ========================================================================== */
+.odelj-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.of-btn {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-dim);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 6px 13px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all .18s ease;
+}
+.of-btn:hover { color: var(--text); border-color: var(--accent-2); transform: translateY(-1px); }
+.of-btn.active {
+  color: var(--accent-ink);
+  background: var(--accent-2);
+  border-color: var(--accent-2);
+  box-shadow: 0 6px 18px -8px rgba(126, 224, 195, 0.55);
+}
+
+/* ==========================================================================
+   GODINA - lista resursa
+   ========================================================================== */
+.res-list {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--surface);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.025);
+}
+.res-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 18px;
+  border-bottom: 1px solid var(--border-soft);
+  transition: background .18s ease, padding-left .18s ease;
+}
+.res-row::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--accent-2);
+  transform: scaleY(0);
+  transition: transform .18s ease;
+}
+.res-row.locked::before { background: var(--sg); }
+.res-row:hover::before { transform: scaleY(1); }
+.res-row:hover { background: var(--surface-2); padding-left: 22px; }
+.res-row:last-child { border-bottom: none; }
+.res-row.hidden { display: none; }
+.res-row .r-ico {
+  width: 34px; height: 34px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: var(--surface-2);
+  color: var(--text-dim);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px;
+  transition: background .18s ease, color .18s ease, transform .18s ease;
+}
+.res-row:hover .r-ico { background: var(--accent-2-soft); color: var(--accent-2); transform: scale(1.06); }
+.res-row.locked:hover .r-ico { background: var(--sg-soft); color: var(--sg); }
+.res-row .r-main { flex: 1; min-width: 0; }
+.res-row .r-title {
+  font-family: var(--font-display);
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color .18s ease;
+}
+.res-row:hover .r-title { color: var(--accent); }
+.res-row.locked:hover .r-title { color: var(--sg); }
+.res-row .r-sub {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+.res-row .r-meta,
+.res-row .r-sub > i {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-dimmer);
+}
+.res-row .r-sub > i { color: var(--sg); }
+.res-row .r-tag {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 2px 7px;
+  border-radius: 5px;
+  letter-spacing: 0.02em;
+}
+.res-row .r-tag.all { color: var(--text-dimmer); background: var(--surface-2); }
+.res-row .chev {
+  flex-shrink: 0;
+  font-size: 12px;
+  color: var(--text-dimmer);
+  transition: transform .18s ease, color .18s ease;
+}
+.res-row:hover .chev { transform: translateX(3px); color: var(--accent-2); }
+.res-row.locked:hover .chev { color: var(--sg); }
+
+/* Kaskadno pojavljivanje redova/kartica kad sekcija udje u prikaz -
+   delay po stavci dolazi iz JS-a (data stagger), inline transition/animation-delay.
+   Napomena: .ocena-card koristi transform za hover-lift, pa se za nju animira
+   samo opacity (animation-fill-mode "both" bi inace trajno "pregazio" hover). */
+@keyframes itemIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@keyframes itemInFade { from { opacity: 0; } to { opacity: 1; } }
+.res-row, .ocena-card { opacity: 0; }
+.sekcija.in-view .res-row { animation: itemIn .5s ease both; }
+.sekcija.in-view .ocena-card { animation: itemInFade .5s ease both; }
+
+.res-empty {
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 30px 26px;
+  text-align: center;
+  color: var(--text-dimmer);
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+}
+.res-empty .plus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px; height: 30px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  border: 1px dashed var(--border);
+  color: var(--accent-2);
+  font-size: 15px;
+}
+
+/* ==========================================================================
+   INFO PODNOZJE (unutar sadrzaja)
+   ========================================================================== */
+.nastava-info {
+  margin-top: 64px;
+  border-top: 1px solid var(--border-soft);
+  padding-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.nastava-info a, .nastava-info span {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--text-dim);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.nastava-info a {
+  padding: 7px 12px;
+  margin: -7px -12px;
+  border-radius: 999px;
+  transition: color .2s ease, background .2s ease;
+}
+.nastava-info i { color: var(--accent-2); }
+.nastava-info a:hover { color: var(--accent-2); background: var(--surface); }
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+@media (max-width: 640px) {
+  .nastava-content { padding: 48px 0 76px; }
+  .blok { margin-bottom: 52px; }
+  .godine-grid { grid-template-columns: 1fr; }
+  .godina-card { min-height: 0; }
+  .godina-card.soon { flex-direction: column; align-items: flex-start; }
+  .res-row .r-title { white-space: normal; }
+}
+
+/* ==========================================================================
+   FOOTER (nastava/* stranice) - stilizovan preko .footer iz main.css,
+   ograniceno na body.nastava-page da ne utice na glavni sajt
+   ========================================================================== */
+.nastava-page .footer {
+  position: relative;
+  border-top: 1px solid transparent;
+  border-image: linear-gradient(90deg, transparent, var(--border-soft) 25%, var(--border-soft) 75%, transparent) 1;
+}
+.nastava-page .footer::before {
+  content: "";
+  position: absolute;
+  top: -1px; left: 50%;
+  transform: translateX(-50%);
+  width: 64px; height: 2px;
+  background: linear-gradient(90deg, var(--accent-2), var(--sg));
+  border-radius: 2px;
+}
