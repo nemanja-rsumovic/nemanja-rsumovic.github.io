@@ -15,7 +15,8 @@ window.NASTAVA_GODINA = {
   ],
 
   prezentacije: [
-    { label: "1. Ravni likovi i površine", href: "../files/nastava/godina-2/1. Равни ликови и површине.pdf", meta: "PDF", odeljenja: ["DJ"] }, 
+    { label: "1. Ravni likovi i površine", href: "../files/nastava/godina-3/1. Равни ликови и површине.pdf", meta: "PDF", odeljenja: ["DJ"] }, 
+    { label: "2. Površine mnogougla - formule", href: "../files/nastava/godina-3/files/nastava/godina-2/2. Површина многоугла - формуле.pdf", meta: "PDF", odeljenja: ["DJ"] }, 
     /*
     { label: "Trigonometrijske jednačine i nejednačine", href: "#", meta: "PDF" },
     { label: "Adicione formule — izvođenja", href: "#", meta: "PDF", odeljenja: ["III-1"] },
@@ -26,6 +27,7 @@ window.NASTAVA_GODINA = {
 
   zadaci: [
     { label: "1. Ravni likovi i površine - primeri iz zbirke", href: "#", meta: "zadaci" },
+    { label: "Inicijalni test", href: "../files/nastava/godina-3/Иицијални тест.pdf", meta: "test", icon: "fa-solid fa-square-check"}, 
     /*
     { label: "Trigonometrija — zbirka zadataka", href: "#", meta: "zadaci" },
     { label: "Trigonometrija — rešenja", href: "#", meta: "rešenja", icon: "fa-solid fa-square-check" },
@@ -34,3 +36,4 @@ window.NASTAVA_GODINA = {
      */
   ],
 };
+
