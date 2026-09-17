@@ -43,7 +43,7 @@ window.NASTAVA_GODINA = {
 
   zadaci: [
     { label: "1. Logika — zadaci iz zbirke", href: "#", meta: "zadaci" },
-    { label: "Inicijalni test", href: "#", meta: "test", icon: "fa-solid fa-square-check"}, 
+    { label: "Inicijalni test", href: "../files/nastava/godina-1/Иницијални тест.pdf", meta: "test", icon: "fa-solid fa-square-check"}, 
     /*
     { label: "Skupovi — rešenja", href: "#", meta: "rešenja", icon: "fa-solid fa-square-check" },
     { label: "Realni brojevi — zadaci", href: "#", meta: "zadaci" },
