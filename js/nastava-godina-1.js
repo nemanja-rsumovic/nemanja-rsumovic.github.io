@@ -31,7 +31,8 @@ window.NASTAVA_GODINA = {
   ],
 
   prezentacije: [
-    { label: "1. Logika", href: "../files/nastava/godina-1/1. Логика.pdf", meta: "PDF", odeljenja: ["I-1", "I-2", "I-4", "I-6"]  }
+    { label: "1. Logika", href: "../files/nastava/godina-1/1. Логика.pdf", meta: "PDF", odeljenja: ["I-1", "I-2", "I-4", "I-6"]  },
+    { label: "2. Kvantifikatori - dodatak", href: "../files/nastava/godina-1/2. Квантификатори - додатак.pdf", meta: "PDF", odeljenja: ["I-4", "I-6"]  },
     /*
     { label: "Realni brojevi", href: "#", meta: "PDF" },
     { label: "Proporcionalnost i primene", href: "#", meta: "PDF", odeljenja: ["I-1", "I-2", "I-4", "I-6"] },
