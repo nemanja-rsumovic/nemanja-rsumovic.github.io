@@ -31,9 +31,11 @@ window.NASTAVA_GODINA = {
   ],
 
   prezentacije: [
-    { label: "1. Logika", href: "../files/nastava/godina-1/1. Логика.pdf", meta: "PDF", odeljenja: ["I-1", "I-2", "I-4", "I-6"]  },
-    { label: "2. Kvantifikatori - dodatak", href: "../files/nastava/godina-1/2. Квантификатори - додатак.pdf", meta: "PDF", odeljenja: ["I-4", "I-6"]  },
-    { label: "3. Skupovi", href: "../files/nastava/godina-1/3. Скупови.pdf", meta: "PDF" },
+    { label: "Logika", href: "../files/nastava/godina-1/1. Логика.pdf", meta: "PDF", odeljenja: ["I-1", "I-2", "I-4", "I-6"]  },
+    { label: "Kvantifikatori - dodatak", href: "../files/nastava/godina-1/1.1. Квантификатори - додатак.pdf", meta: "PDF", odeljenja: ["I-4", "I-6"]  },
+    { label: "Skupovi", href: "../files/nastava/godina-1/2. Скупови.pdf", meta: "PDF" },
+    { label: "Funkcije", href: "#", meta: "PDF", odeljenja: ["I-1", "I-2"], icon: "fa-solid fa-lock"},
+    { label: "Funkcije", href: "#", meta: "PDF", odeljenja: ["I-4", "I-6"], icon: "fa-solid fa-lock" },
     /*
     { label: "Proporcionalnost i primene", href: "#", meta: "PDF", odeljenja: ["I-1", "I-2", "I-4", "I-6"] },
     { label: "Kombinatorika — prošireno", href: "#", meta: "PDF", odeljenja: ["I-1"] },
@@ -44,7 +46,7 @@ window.NASTAVA_GODINA = {
   zadaci: [
     { label: "1. Logika — zadaci iz zbirke", href: "#", meta: "zadaci" },
     { label: "Inicijalni test", href: "../files/nastava/godina-1/Иницијални тест.pdf", meta: "test"}, 
-    { label: "Skupovi — primeri zadataka", href: "../files/nastava/godina-1/3. Скупови - примери задатака.pdf", meta: "rešenja", icon: "fa-solid fa-square-check" },
+    { label: "Skupovi — primeri zadataka", href: "../files/nastava/godina-1/2. Скупови - примери задатака.pdf", meta: "rešenja", icon: "fa-solid fa-square-check" },
     /*
     { label: "Realni brojevi — zadaci", href: "#", meta: "zadaci" },
     { label: "Kontrolni 1 — urađeno na tabli", href: "#", meta: "sken", icon: "fa-solid fa-camera" },
