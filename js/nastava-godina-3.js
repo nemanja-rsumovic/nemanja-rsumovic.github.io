@@ -29,8 +29,8 @@ window.NASTAVA_GODINA = {
   zadaci: [
     { label: "Ravni likovi i površine - primeri iz zbirke", href: "#", meta: "zadaci" },
     { label: "Inicijalni test", href: "../files/nastava/godina-3/Иицијални тест.pdf", meta: "test", icon: "fa-solid fa-square-check"}, 
-    { label: "Prizma - neophodne formule", href: "../files/nastava/godina-3/3. Призма - неопходне формуле.pdf", meta: "test", icon: "fa-solid fa-square-check"}, 
-    { label: "Prizma - primeri osnovnih zadataka", href: "../files/nastava/godina-3/3. Призма - примери основних задатака.pdf", meta: "test", icon: "fa-solid fa-square-check"}, 
+    { label: "Prizma - neophodne formule", href: "../files/nastava/godina-3/3. Призма - неопходне формуле.pdf", meta: "formule"}, 
+    { label: "Prizma - primeri osnovnih zadataka", href: "../files/nastava/godina-3/3. Призма - примери основних задатака.pdf", meta: "zadaci", icon: "fa-solid fa-square-check"}, 
     /*
     { label: "Trigonometrija — zbirka zadataka", href: "#", meta: "zadaci" },
     { label: "Trigonometrija — rešenja", href: "#", meta: "rešenja", icon: "fa-solid fa-square-check" },
