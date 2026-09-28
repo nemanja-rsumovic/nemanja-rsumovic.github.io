@@ -34,11 +34,11 @@ window.NASTAVA_GODINA = {
     { label: "Logika", href: "../files/nastava/godina-1/1. Логика.pdf", meta: "PDF", odeljenja: ["I-1", "I-2", "I-4", "I-6"]  },
     { label: "Kvantifikatori - dodatak", href: "../files/nastava/godina-1/1.1. Квантификатори - додатак.pdf", meta: "PDF", odeljenja: ["I-4", "I-6"]  },
     { label: "Skupovi", href: "../files/nastava/godina-1/2. Скупови.pdf", meta: "PDF" },
-    { label: "Funkcije", href: "#", meta: "PDF", odeljenja: ["I-1", "I-2"], icon: "fa-solid fa-lock"},
-    { label: "Funkcije", href: "#", meta: "PDF", odeljenja: ["I-4", "I-6"], icon: "fa-solid fa-lock" },
+    { label: "Funkcije", href: "../files/nastava/godina-1/3. Функције [ДЈС].pdf", meta: "PDF", odeljenja: ["I-1", "I-2"]},
+    { label: "Funkcije", href: "../files/nastava/godina-1/3. Функције [ОС].pdf", meta: "PDF", odeljenja: ["I-4", "I-6"] },
     /*
     { label: "Proporcionalnost i primene", href: "#", meta: "PDF", odeljenja: ["I-1", "I-2", "I-4", "I-6"] },
-    { label: "Kombinatorika — prošireno", href: "#", meta: "PDF", odeljenja: ["I-1"] },
+    { label: "Kombinatorika — prošireno", href: "#", meta: "PDF", odeljenja: ["I-1"], icon: "fa-solid fa-lock" },
     { label: "Uvod u geometriju", href: "#", meta: "PDF" },
      */
   ],
