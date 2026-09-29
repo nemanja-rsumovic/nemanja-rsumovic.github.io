@@ -34,6 +34,7 @@ window.NASTAVA_GODINA = {
     { label: "Logika", href: "../files/nastava/godina-1/1. Логика.pdf", meta: "PDF", odeljenja: ["I-1", "I-2", "I-4", "I-6"]  },
     { label: "Kvantifikatori - dodatak", href: "../files/nastava/godina-1/1.1. Квантификатори - додатак.pdf", meta: "PDF", odeljenja: ["I-4", "I-6"]  },
     { label: "Skupovi", href: "../files/nastava/godina-1/2. Скупови.pdf", meta: "PDF" },
+    { label: "Funkcije (uvod)", href: "../files/nastava/godina-1/3. Функције - увод.pdf", meta: "teorija" },
     { label: "Funkcije", href: "../files/nastava/godina-1/3. Функције [ДЈС].pdf", meta: "PDF", odeljenja: ["I-1", "I-2"]},
     { label: "Funkcije", href: "../files/nastava/godina-1/3. Функције [ОС].pdf", meta: "PDF", odeljenja: ["I-4", "I-6"] },
     /*
@@ -44,9 +45,9 @@ window.NASTAVA_GODINA = {
   ],
 
   zadaci: [
-    { label: "1. Logika — zadaci iz zbirke", href: "#", meta: "zadaci" },
+    { label: "Logika - zadaci iz zbirke", href: "#", meta: "zadaci" },
     { label: "Inicijalni test", href: "../files/nastava/godina-1/Иницијални тест.pdf", meta: "test"}, 
-    { label: "Skupovi — primeri zadataka", href: "../files/nastava/godina-1/2. Скупови - примери задатака.pdf", meta: "rešenja", icon: "fa-solid fa-square-check" },
+    { label: "Skupovi - primeri zadataka", href: "../files/nastava/godina-1/2. Скупови - примери задатака.pdf", meta: "rešenja", icon: "fa-solid fa-square-check" },
     /*
     { label: "Realni brojevi — zadaci", href: "#", meta: "zadaci" },
     { label: "Kontrolni 1 — urađeno na tabli", href: "#", meta: "sken", icon: "fa-solid fa-camera" },
