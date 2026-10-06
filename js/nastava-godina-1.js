@@ -48,6 +48,7 @@ window.NASTAVA_GODINA = {
     { label: "Logika - zadaci iz zbirke", href: "#", meta: "zadaci" },
     { label: "Inicijalni test", href: "../files/nastava/godina-1/Иницијални тест.pdf", meta: "test"}, 
     { label: "Skupovi - primeri zadataka", href: "../files/nastava/godina-1/2. Скупови - примери задатака.pdf", meta: "rešenja", icon: "fa-solid fa-square-check" },
+    { label: "PRIPREMA ZA KONTROLNI - LOGIKA, SKUPOVI, FUNKCIJE", href: "../files/nastava/godina-1/контролни 1 - припрема.pdf", meta: "rešenja", icon: "fa-solid fa-square-check" },
     /*
     { label: "Realni brojevi — zadaci", href: "#", meta: "zadaci" },
     { label: "Kontrolni 1 — urađeno na tabli", href: "#", meta: "sken", icon: "fa-solid fa-camera" },
