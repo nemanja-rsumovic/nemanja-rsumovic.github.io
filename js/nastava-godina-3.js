@@ -18,7 +18,7 @@ window.NASTAVA_GODINA = {
     { label: "1. Ravni likovi i površine", href: "../files/nastava/godina-3/1. Равни ликови и површине.pdf", meta: "PDF", odeljenja: ["DJ"] }, 
     { label: "2. Površine mnogougla - formule", href: "../files/nastava/godina-3/2. Површина многоугла - формуле.pdf", meta: "PDF", odeljenja: ["DJ"] }, 
     { label: "3. Prizma", href: "../files/nastava/godina-3/3. Призма.pdf", meta: "PDF", odeljenja: ["DJ"] }, 
-    { label: "4. Prizma", href: "../files/nastava/godina-3/4. Пирамида.pdf", meta: "PDF", odeljenja: ["DJ"] }, 
+    { label: "4. Piramida", href: "../files/nastava/godina-3/4. Пирамида.pdf", meta: "PDF", odeljenja: ["DJ"] }, 
     /*
     { label: "Trigonometrijske jednačine i nejednačine", href: "#", meta: "PDF" },
     { label: "Adicione formule — izvođenja", href: "#", meta: "PDF", odeljenja: ["III-1"] },
@@ -28,7 +28,6 @@ window.NASTAVA_GODINA = {
   ],
 
   zadaci: [
-    { label: "Ravni likovi i površine - primeri iz zbirke", href: "#", meta: "zadaci" },
     { label: "Inicijalni test", href: "../files/nastava/godina-3/Иицијални тест.pdf", meta: "test", icon: "fa-solid fa-square-check"}, 
     { label: "Prizma - neophodne formule", href: "../files/nastava/godina-3/3. Призма - неопходне формуле.pdf", meta: "formule"}, 
     { label: "Prizma - zadaci", href: "../files/nastava/godina-3/3. Призма - задаци.pdf", meta: "zadaci", icon: "fa-solid fa-square-check"},
