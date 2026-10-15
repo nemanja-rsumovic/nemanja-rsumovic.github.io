@@ -37,6 +37,7 @@ window.NASTAVA_GODINA = {
     { label: "Funkcije (uvod)", href: "../files/nastava/godina-1/3. Функције - увод.pdf", meta: "teorija" },
     { label: "Funkcije", href: "../files/nastava/godina-1/3. Функције [ДЈС].pdf", meta: "PDF", odeljenja: ["I-1", "I-2"]},
     { label: "Funkcije", href: "../files/nastava/godina-1/3. Функције [ОС].pdf", meta: "PDF", odeljenja: ["I-4", "I-6"] },
+    { label: "Skupovi brojeva", href: "../files/nastava/godina-1/Реални_бројеви_презентација.pdf", meta: "PDF" },
     /*
     { label: "Proporcionalnost i primene", href: "#", meta: "PDF", odeljenja: ["I-1", "I-2", "I-4", "I-6"] },
     { label: "Kombinatorika — prošireno", href: "#", meta: "PDF", odeljenja: ["I-1"], icon: "fa-solid fa-lock" },
