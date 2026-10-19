@@ -31,7 +31,7 @@ window.NASTAVA_GODINA = {
     { label: "Inicijalni test", href: "../files/nastava/godina-3/Иицијални тест.pdf", meta: "test", icon: "fa-solid fa-square-check"}, 
     { label: "Prizma - neophodne formule", href: "../files/nastava/godina-3/3. Призма - неопходне формуле.pdf", meta: "formule"}, 
     { label: "Prizma - zadaci", href: "../files/nastava/godina-3/3. Призма - задаци.pdf", meta: "zadaci", icon: "fa-solid fa-square-check"},
-    { label: "Piramida - zadaci #TODO", href: "../", meta: "zadaci", icon: "fa-solid fa-square-check"},
+    { label: "Piramida - zadaci", href: "../files/nastava/godina-3/4. Пирамида - задаци.pdf", meta: "zadaci", icon: "fa-solid fa-square-check"},
     /*
     { label: "Trigonometrija — zbirka zadataka", href: "#", meta: "zadaci" },
     { label: "Trigonometrija — rešenja", href: "#", meta: "rešenja", icon: "fa-solid fa-square-check" },
