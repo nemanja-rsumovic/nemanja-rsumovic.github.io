@@ -19,6 +19,8 @@ window.NASTAVA_GODINA = {
     { label: "2. Površine mnogougla - formule", href: "../files/nastava/godina-3/2. Површина многоугла - формуле.pdf", meta: "PDF", odeljenja: ["DJ"] }, 
     { label: "3. Prizma", href: "../files/nastava/godina-3/3. Призма.pdf", meta: "PDF", odeljenja: ["DJ"] }, 
     { label: "4. Piramida", href: "../files/nastava/godina-3/4. Пирамида.pdf", meta: "PDF", odeljenja: ["DJ"] }, 
+    { label: "5. Valjak", href: "../files/nastava/godina-3/5. Ваљак.pdf", meta: "PDF", odeljenja: ["DJ"] }, 
+    { label: "6. Kupa", href: "../files/nastava/godina-3/6. Купа.pdf", meta: "PDF", odeljenja: ["DJ"] }, 
     /*
     { label: "Trigonometrijske jednačine i nejednačine", href: "#", meta: "PDF" },
     { label: "Adicione formule — izvođenja", href: "#", meta: "PDF", odeljenja: ["III-1"] },
@@ -32,6 +34,8 @@ window.NASTAVA_GODINA = {
     { label: "Prizma - neophodne formule", href: "../files/nastava/godina-3/3. Призма - неопходне формуле.pdf", meta: "formule"}, 
     { label: "Prizma - zadaci", href: "../files/nastava/godina-3/3. Призма - задаци.pdf", meta: "zadaci", icon: "fa-solid fa-square-check"},
     { label: "Piramida - zadaci", href: "../files/nastava/godina-3/4. Пирамида - задаци.pdf", meta: "zadaci", icon: "fa-solid fa-square-check"},
+    { label: "Valjak - zadaci i resenja", href: "../files/nastava/godina-3/5. Ваљак - задаци.pdf", meta: "zadaci", icon: "fa-solid fa-square-check"},
+    { label: "Kupa - zadaci i resenja [#TODO]", href: "../", meta: "zadaci", icon: "fa-solid fa-square-check"},
     /*
     { label: "Trigonometrija — zbirka zadataka", href: "#", meta: "zadaci" },
     { label: "Trigonometrija — rešenja", href: "#", meta: "rešenja", icon: "fa-solid fa-square-check" },
