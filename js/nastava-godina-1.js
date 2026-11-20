@@ -40,7 +40,7 @@ window.NASTAVA_GODINA = {
     { label: "Skupovi brojeva", href: "../files/nastava/godina-1/4. Реални бројеви.pdf", meta: "PDF" },
     { label: "Stepen i približna vrednost broja", href: "../files/nastava/godina-1/5. Степен и приближна вредност.pdf", meta: "PDF" },
     { label: "Proporcionalnost", href: "../files/nastava/godina-1/6. Пропорционалност.pdf", meta: "PDF" },
-    //{ label: "Račun podele i mešanja", href: "../", meta: "PDF" },
+    { label: "Račun podele i mešanja", href: "../files/nastava/godina-1/7. Рачун поделе и мешања.pdf", meta: "PDF" },
     //{ label: "Procentni račun", href: "../", meta: "PDF" },
 
     /*
